@@ -32,12 +32,17 @@ class LoginView: UIView {
     var titleLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "Bankey"
+        $0.font = UIFont.systemFont(ofSize: 40, weight: .bold)
         return $0
     }(UILabel())
     
     var subTitleLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.text = "Your premium source for all thing banking!"
+        $0.font = UIFont.systemFont(ofSize: 28)
+        $0.lineBreakMode = .byWordWrapping
+        $0.numberOfLines = 0
+        $0.textAlignment = .center
         return $0
     }(UILabel())
     
@@ -109,8 +114,13 @@ class LoginView: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-        
+            titleLabel.bottomAnchor.constraint(equalToSystemSpacingBelow: subTitleLabel.topAnchor, multiplier: -3),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
+            subTitleLabel.bottomAnchor.constraint(equalTo: containerLoginStack.topAnchor, constant: -50),
+            subTitleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            subTitleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 8),
+            subTitleLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -8),
             
             containerLoginStack.centerYAnchor.constraint(equalTo: centerYAnchor),
             containerLoginStack.centerXAnchor.constraint(equalTo: centerXAnchor),
