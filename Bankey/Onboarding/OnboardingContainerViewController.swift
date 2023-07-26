@@ -13,6 +13,8 @@ class OnboardingContainerViewController: UIViewController {
     var pages = [UIViewController]()
     var currentVC: UIViewController {
         didSet {
+            guard let indexPage = pages.firstIndex(of: currentVC) else { return }
+            print(indexPage)
         }
     }
     
@@ -38,7 +40,7 @@ class OnboardingContainerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         view.backgroundColor = .systemPurple
         
         addChild(pageViewController)
@@ -48,12 +50,12 @@ class OnboardingContainerViewController: UIViewController {
         pageViewController.dataSource = self
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
-            view.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor),
-            view.bottomAnchor.constraint(equalTo: pageViewController.view.bottomAnchor),
-        ])
+//        NSLayoutConstraint.activate([
+//            view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
+//            view.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor),
+//            view.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor),
+//            view.bottomAnchor.constraint(equalTo: pageViewController.view.bottomAnchor),
+//        ])
         
         pageViewController.setViewControllers([pages.first!], direction: .forward, animated: false, completion: nil)
         currentVC = pages.first!
@@ -90,26 +92,5 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return pages.firstIndex(of: self.currentVC) ?? 0
     }
+    
 }
-
-//// MARK: - ViewControllers
-//class ViewController1: UIViewController {
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        view.backgroundColor = .systemRed
-//    }
-//}
-//
-//class ViewController2: UIViewController {
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        view.backgroundColor = .systemGreen
-//    }
-//}
-//
-//class ViewController3: UIViewController {
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        view.backgroundColor = .systemBlue
-//    }
-//}

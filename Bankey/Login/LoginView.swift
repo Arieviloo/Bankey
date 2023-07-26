@@ -67,11 +67,11 @@ class LoginView: UIView {
     
     var signInButton: UIButton = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.configuration = .filled()
-        $0.configuration?.imagePadding = 8
         $0.setTitle("Sign In", for: .normal)
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 8
+        $0.configuration = .filled()
+        $0.configuration?.imagePadding = 8
         $0.addTarget(self, action: #selector(tappedSignIn), for: .touchDown)
         return $0
     }(UIButton())
