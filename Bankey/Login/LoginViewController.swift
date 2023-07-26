@@ -21,12 +21,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         loginView?.delegate(delegate: self)
         loginView?.delegateTextField(delegate: self)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
-      
     }
     
-  
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        loginView?.signInButton.configuration?.showsActivityIndicator = false
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {
@@ -38,9 +37,10 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController: LoginViewProtocol {
     func actionSignInButton() {
         let containerOnboard = OnboardingContainerViewController()
+        let dummy = DummyViewController()
         loginView?.errorMessageLabel.isHidden = true
         
-        self.navigationController?.pushViewController(containerOnboard, animated: true)
+       
         
         
         guard let username = loginView?.userNameTextField.text, let password = loginView?.passwordTextField.text else {
@@ -54,7 +54,12 @@ extension LoginViewController: LoginViewProtocol {
         
         if username == "" && password == "" {
             loginView?.signInButton.configuration?.showsActivityIndicator = true
-            
+            if LocalState.hasOnboarded {
+                self.navigationController?.pushViewController(dummy, animated: true)
+            } else {
+                self.navigationController?.pushViewController(containerOnboard, animated: true)
+            }
+      
         } else {
             configErroMessageLabel(message: "Incorrect Username / Password")
         }

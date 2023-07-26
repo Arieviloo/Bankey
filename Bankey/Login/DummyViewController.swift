@@ -49,6 +49,7 @@ class DummyViewController: UIViewController {
     
     
     @objc func tappedGetOutButton() {
+        LocalState.hasOnboarded = true
         navigationController?.popToRootViewController(animated: true)
     }
     
