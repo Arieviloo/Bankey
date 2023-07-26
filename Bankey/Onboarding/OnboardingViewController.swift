@@ -10,6 +10,7 @@ import UIKit
 class OnboardingViewController: UIViewController {
     
     let onboardingView = OnboardingView()
+    let login = LoginViewController()
  
     override func loadView() {
         self.view = onboardingView
@@ -18,6 +19,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         onboardingView.delegate(delegate: self)
+        
     }
     
     init(imageOnboarding: String , textOnboarding: String) {
@@ -37,7 +39,8 @@ extension OnboardingViewController: OnboardingViewProtocol {
     }
     
     func actionDoneButton() {
-        print("done")
+        let dummy = DummyViewController()
+        navigationController?.pushViewController(dummy, animated: true)
     }
     
 }
