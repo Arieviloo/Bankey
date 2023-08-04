@@ -7,6 +7,7 @@
 
 import UIKit
 
+let appColor: UIColor = .systemTeal
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window?.makeKeyAndVisible()
         window?.backgroundColor = .white
-        window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+        window?.rootViewController = UINavigationController(rootViewController: MainViewController())
 //        window?.rootViewController = OnboardingContainerViewController()
         return true
         
