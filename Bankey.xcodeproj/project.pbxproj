@@ -15,6 +15,8 @@
 		E22DBE652A6EA5800060F106 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E22DBE632A6EA5800060F106 /* LaunchScreen.storyboard */; };
 		E22DBE6F2A6EAB340060F106 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22DBE6E2A6EAB340060F106 /* LoginView.swift */; };
 		E23581022A719A7B002772C3 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23581012A719A7B002772C3 /* DummyViewController.swift */; };
+		E2A301092AA79ADC00395D24 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A301082AA79ADC00395D24 /* AccountSummaryViewController.swift */; };
+		E2A3010B2AA79AE300395D24 /* AccountSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A3010A2AA79AE300395D24 /* AccountSummaryView.swift */; };
 		E2DD45FC2A71B26F0097BBC0 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DD45FB2A71B26F0097BBC0 /* LocalState.swift */; };
 		E2E098DB2A6F5A3700096C63 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E098DA2A6F5A3700096C63 /* OnboardingContainerViewController.swift */; };
 		E2EE64322A7D44FE00808F39 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2EE64312A7D44FE00808F39 /* MainViewController.swift */; };
@@ -32,6 +34,8 @@
 		E22DBE662A6EA5800060F106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E22DBE6E2A6EAB340060F106 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E23581012A719A7B002772C3 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		E2A301082AA79ADC00395D24 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
+		E2A3010A2AA79AE300395D24 /* AccountSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryView.swift; sourceTree = "<group>"; };
 		E2DD45FB2A71B26F0097BBC0 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		E2E098DA2A6F5A3700096C63 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		E2EE64312A7D44FE00808F39 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 				E22DBE6D2A6EA80F0060F106 /* Login */,
 				E22DBE582A6EA57F0060F106 /* AppDelegate.swift */,
 				E2EE64312A7D44FE00808F39 /* MainViewController.swift */,
+				E2A301072AA79A9700395D24 /* AccountSummary */,
 				E22DBE662A6EA5800060F106 /* Info.plist */,
 				E22DBE6C2A6EA7EC0060F106 /* Files */,
 			);
@@ -96,6 +101,15 @@
 				E23581012A719A7B002772C3 /* DummyViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		E2A301072AA79A9700395D24 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				E2A301082AA79ADC00395D24 /* AccountSummaryViewController.swift */,
+				E2A3010A2AA79AE300395D24 /* AccountSummaryView.swift */,
+			);
+			path = AccountSummary;
 			sourceTree = "<group>";
 		};
 		E2DD45FA2A71B2630097BBC0 /* Utils */ = {
@@ -188,9 +202,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E23581022A719A7B002772C3 /* DummyViewController.swift in Sources */,
+				E2A3010B2AA79AE300395D24 /* AccountSummaryView.swift in Sources */,
 				E22DBE6F2A6EAB340060F106 /* LoginView.swift in Sources */,
 				E22DBE5D2A6EA57F0060F106 /* LoginViewController.swift in Sources */,
 				E22CFB692A700AA900A6152A /* OnboardingViewController.swift in Sources */,
+				E2A301092AA79ADC00395D24 /* AccountSummaryViewController.swift in Sources */,
 				E2EE64352A7D45A800808F39 /* UIViewController.swift in Sources */,
 				E22CFB6D2A700ADC00A6152A /* OnboardingView.swift in Sources */,
 				E22DBE592A6EA57F0060F106 /* AppDelegate.swift in Sources */,
