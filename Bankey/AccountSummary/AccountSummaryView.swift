@@ -9,16 +9,10 @@ import UIKit
 
 class AccountSummaryView: UIView {
     
-    lazy var containerStackView: UIStackView = {
+    lazy var listTableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
-    }(UIStackView())
-    
-    lazy var titleLabel: UILabel = {
-        $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.text = "Welcome"
-        return $0
-    }(UILabel())
+    }(UITableView())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,16 +26,20 @@ class AccountSummaryView: UIView {
     }
     
     private func configAddView() {
-        addSubview(containerStackView)
-        containerStackView.addArrangedSubview(titleLabel)
-      
-        
+        addSubview(listTableView)
+    }
+    
+    public func configProtocolTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        listTableView.delegate = delegate
+        listTableView.dataSource = dataSource
     }
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            containerStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            containerStackView.centerYAnchor.constraint(equalTo: centerYAnchor)
+            listTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            listTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            listTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            listTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }
