@@ -34,9 +34,5 @@ extension AccountSummaryViewController: UITableViewDelegate, UITableViewDataSour
         cel.textLabel?.text = games[indexPath.row]
         
         return cel
-        
     }
-    
-    
-    
 }
