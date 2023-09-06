@@ -21,6 +21,7 @@ class AccountSummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         accountSummaryView?.configProtocolTableView(delegate: self, dataSource: self)
+
     }
 }
 
@@ -34,9 +35,6 @@ extension AccountSummaryViewController: UITableViewDelegate, UITableViewDataSour
         cel.textLabel?.text = games[indexPath.row]
         
         return cel
-        
     }
-    
-    
-    
 }
+
