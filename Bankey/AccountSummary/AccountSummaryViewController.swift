@@ -21,6 +21,7 @@ class AccountSummaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         accountSummaryView?.configProtocolTableView(delegate: self, dataSource: self)
+
     }
 }
 
@@ -36,3 +37,4 @@ extension AccountSummaryViewController: UITableViewDelegate, UITableViewDataSour
         return cel
     }
 }
+
