@@ -9,16 +9,17 @@ import UIKit
 
 class AccountSummaryView: UIView {
     
-    lazy var listTableView: UITableView = {
+   lazy var listTableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(UITableView())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .green
+        backgroundColor = .red
         configAddView()
         configConstraints()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -27,7 +28,16 @@ class AccountSummaryView: UIView {
     
     private func configAddView() {
         addSubview(listTableView)
+        
+        let header = HeaderTableView()
+        var size = header.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        size.width = UIScreen.main.bounds.width
+        size.height = 200
+        header.frame.size = size
+        listTableView.tableHeaderView = header
+        
     }
+    
     
     public func configProtocolTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
         listTableView.delegate = delegate
@@ -39,7 +49,10 @@ class AccountSummaryView: UIView {
             listTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             listTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             listTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            listTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            listTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+        
+            
+            
         ])
     }
 }
